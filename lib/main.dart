@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 void main() => runApp(Hru_chat());
 
 class Hru_chat extends StatelessWidget {
@@ -14,15 +15,21 @@ class Hru_chat extends StatelessWidget {
     );
   }
 }
-
 class GirisEkrani extends StatefulWidget {
   @override
   _GirisEkraniState createState() => _GirisEkraniState();
 }
 
 class _GirisEkraniState extends State<GirisEkrani> {
+  TextEditingController t1 = TextEditingController();
+  TextEditingController t2 = TextEditingController();
+
   girisYap() {
-    Navigator.pushNamed(context, "/ProfilSayfasiRotasi");
+    Navigator.pushNamed(
+      context,
+      "/ProfilSayfasiRotasi",
+      arguments: VeriModeli(kullaniciAdi: t1.text, sifre: t2.text),
+    );
   }
 
   @override
@@ -32,7 +39,17 @@ class _GirisEkraniState extends State<GirisEkrani> {
       body: Container(
         child: Column(
           children: <Widget>[
-            RaisedButton(onPressed: girisYap, child: Text("Giriş Yap")),
+            TextFormField(
+              controller: t1,
+            ),
+            TextFormField(
+              controller: t2,
+            ),
+            RaisedButton(
+                onPressed: () {
+                  girisYap();
+                },
+                child: Text("Giriş Yap")),
           ],
         ),
       ),
@@ -66,4 +83,9 @@ class _ProfilEkraniState extends State<ProfilEkrani> {
       ),
     );
   }
+}
+
+class VeriModeli {
+  String kullaniciAdi, sifre;
+  VeriModeli({required this.kullaniciAdi, required this.sifre});
 }
