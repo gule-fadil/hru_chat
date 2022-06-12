@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 void main() => runApp(Hru_chat());
 
 class Hru_chat extends StatelessWidget {
@@ -25,11 +24,29 @@ class _GirisEkraniState extends State<GirisEkrani> {
   TextEditingController t2 = TextEditingController();
 
   girisYap() {
-    Navigator.pushNamed(
+    if (t1.text== "admin"&& t2.text=="1234"){Navigator.pushNamed(
       context,
       "/ProfilSayfasiRotasi",
       arguments: VeriModeli(kullaniciAdi: t1.text, sifre: t2.text),
     );
+    } else {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: new Text("Yanlış kullanıcı adı veya şifre"),
+            content: new Text("Lütfen giriş bilgilerinizi gözden geçirin."),
+            actions: <Widget>[
+              new FlatButton(
+                child: new Text("Kapat"),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        },
+      );}
   }
 
   @override
@@ -77,7 +94,8 @@ class _ProfilEkraniState extends State<ProfilEkrani> {
             RaisedButton(
               onPressed: cikisYap,
               child: Text("Çıkış Yap"),
-            )
+            ),
+
           ],
         ),
       ),
