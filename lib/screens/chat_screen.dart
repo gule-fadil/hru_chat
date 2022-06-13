@@ -4,7 +4,7 @@ import 'package:hru_chat/constants.dart';
 import 'package:flutter/material.dart';
 
 final _firestore = FirebaseFirestore.instance;
-User loggedInUser;
+User? loggedInUser;
 
 class ChatScreen extends StatefulWidget {
   static const String id = 'chat_screen';
@@ -21,7 +21,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
   final messageController = TextEditingController();
   final _auth = FirebaseAuth.instance;
-  String messageText;
+  String? messageText;
 
   void getCurrentUser() {
     try {
@@ -76,7 +76,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     onPressed: () {
                       messageController.clear();
                       _firestore.collection('messages').add(
-                          {'text': messageText, 'sender': loggedInUser.email});
+                          {'text': messageText, 'sender': loggedInUser?.email});
                     },
                     child: Text(
                       'Send',
@@ -100,12 +100,12 @@ class MessageStream extends StatelessWidget {
       stream: _firestore.collection('messages').snapshots(),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          final messages = snapshot.data.docs.reversed;
+           final messages = snapshot.data?.docs.reversed;
           List<MessageBubble> messagesWidget = [];
-          for (var message in messages) {
+          for (var message in messages!) {
             final messageText = message.data()['text'];
             final messageSender = message.data()['sender'];
-            final currentUser = loggedInUser.email;
+            final currentUser = loggedInUser?.email;
             if (messageText != null) {
               final messageWidget = MessageBubble(
                 sender: messageSender,

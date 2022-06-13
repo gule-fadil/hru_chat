@@ -13,7 +13,7 @@ import 'package:hru_chat/main.dart';
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget( Hru_chat());
+    await tester.pumpWidget( MaterialApp());
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);

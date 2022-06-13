@@ -13,8 +13,8 @@ class RegistrationScreen extends StatefulWidget {
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
   final _auth = FirebaseAuth.instance;
-  String password = '0';
-  String email = '0';
+  String? password ;
+  String? email ;
   bool showSpinner = false;
 
   @override
@@ -48,7 +48,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   email = value;
                 },
                 decoration: KTextFieldDecoration.copyWith(
-                  hintText: 'Enter your Email',
+                  hintText: 'Email Adresiniz',
                 ),
               ),
               SizedBox(
@@ -61,14 +61,14 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   password = value;
                 },
                 decoration: KTextFieldDecoration.copyWith(
-                  hintText: 'Enter your password',
+                  hintText: 'Şifre giriniz',
                 ),
               ),
               SizedBox(
                 height: 24.0,
               ),
               RoundedButton(
-                title: 'Register',
+                title: 'Kaydol',
                 color: Colors.blueAccent,
                 onPress: () async {
                   setState(() {

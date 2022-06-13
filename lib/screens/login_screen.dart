@@ -12,10 +12,10 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  String email;
-  String password;
+  String? email;
+  String? password;
   final _auth = FirebaseAuth.instance;
-  UserCredential _userCredential;
+  late UserCredential _userCredential;
   bool showSpinner = false;
   @override
   Widget build(BuildContext context) {
