@@ -48,6 +48,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 Navigator.pop(context);
               }),
         ],
+        //apptitle
         title: Text('⚡  HRU_Chat'),
         backgroundColor: Colors.lightBlueAccent,
       ),
