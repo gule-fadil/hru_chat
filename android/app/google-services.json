@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "783311618533",
+    "project_id": "dagtiksistemleri",
+    "storage_bucket": "dagtiksistemleri.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:783311618533:android:302591f89d5101c8b62f0c",
+        "android_client_info": {
+          "package_name": "com.example.hru_chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "783311618533-mo6s2raddg1f9e1kul97qb1042lsojba.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXEhd6LkScuqEEm_DBykuMFDr-HsmkaZw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "783311618533-mo6s2raddg1f9e1kul97qb1042lsojba.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
