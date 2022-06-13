@@ -48,7 +48,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 Navigator.pop(context);
               }),
         ],
-        title: Text('⚡️Chat'),
+        title: Text('⚡  HRU_Chat'),
         backgroundColor: Colors.lightBlueAccent,
       ),
       body: SafeArea(
@@ -71,7 +71,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       decoration: kMessageTextFieldDecoration,
                     ),
                   ),
-                  FlatButton(
+                  TextButton(
                     onPressed: () {
                       messageController.clear();
                       _firestore.collection('messages').add(
@@ -137,7 +137,7 @@ class MessageBubble extends StatelessWidget {
   final String sender;
   final String text;
   final bool isMe;
-  MessageBubble({this.sender, this.text, this.isMe});
+  MessageBubble({ required this.sender,required this.text, required this.isMe});
   @override
   Widget build(BuildContext context) {
     return Padding(
