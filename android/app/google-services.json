@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1013354953904",
+    "project_id": "hru-chat-def31",
+    "storage_bucket": "hru-chat-def31.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1013354953904:android:4fa875f545dc967a9a4f75",
+        "android_client_info": {
+          "package_name": "com.example.hru_chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1013354953904-jk75tsv1qn3e9kren5ej20d6n00gdp2u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjBggzGdCZdsgD3xS94o0QAWNo74O2Brw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1013354953904-jk75tsv1qn3e9kren5ej20d6n00gdp2u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
